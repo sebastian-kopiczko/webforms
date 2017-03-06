@@ -1,4 +1,193 @@
-body {
-    width: 100%;
-    background: red;
-}
+        @import 'mixins';
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            width: 100%;
+            background: {
+                image: url('../img/main-bg.png');
+                position: center;
+                repeat: no-repeat;
+                size: cover;
+            }
+        }
+
+        label,
+        button {
+            cursor: pointer;
+        }
+
+        .wrapper {
+            width: 90%;
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            margin: auto;
+        }
+
+        .register,
+        .send,
+        .sign,
+        .recover,
+        .subscribe {
+            margin: 40px 10px 60px 10px;
+            width: 420px;
+            text-align: center;
+            fieldset {
+                background: #fffff3;
+                box-shadow: 0px 0px 1px 20px rgba(0, 0, 0, 0.5);
+            }
+            h2 {
+                font-size: 2rem;
+                color: #eee;
+                margin-bottom: 2rem;
+                text-shadow: 2px 2px rgba(0, 0, 0, 0.75);
+            }
+            &__input {
+                position: relative;
+                @include label-primary;
+                @include padding-left;
+                &[type=checkbox] + label {
+                    display: inline-block;
+                }
+            }
+            &__select {
+                @include label-primary;
+                @include padding-left;
+                width: 91%;
+                color: #999;
+            }
+            &__checkbox {
+                @include label-primary;
+                text-align: left;
+                margin: 0 auto;
+                height: 18px;
+                border: none;
+                &-label {
+                    position: relative;
+                    padding-left: 30px;
+                }
+                input {
+                    position: absolute;
+                    left: 0;
+                    top: 0;
+                    width: 18px;
+                    height: 18px;
+                    opacity: 0;
+                    z-index: 2;
+                    cursor: pointer;
+                    &:checked ~ .state:before {
+                        animation: checkboxShowAnim .4s 1;
+                        opacity: 1;
+                    }
+                }
+                .state {
+                    width: 18px;
+                    height: 18px;
+                    display: block;
+                    position: absolute;
+                    left: 0;
+                    top: 0;
+                    border: 1px solid #aaa;
+                    border-radius: 3px;
+                    cursor: pointer;
+                    &:before {
+                        width: 12px;
+                        height: 12px;
+                        border-radius: 3px;
+                        background: #70B81B;
+                        display: block;
+                        position: absolute;
+                        left: 50%;
+                        top: 50%;
+                        content: '';
+                        transform: translate(-50%, -50%) scale(1);
+                        opacity: 0;
+                    }
+                }
+            }
+            &__btn {
+                @include label-primary;
+                margin: 10px 0 0 0;
+                color: #eee;
+                font-size: 1.4rem;
+                background: #70B81B;
+                border: none;
+                border-radius: 7px;
+            }
+            @keyframes checkboxShowAnim {
+                0% {
+                    border-radius: 50%;
+                    transform: translate(-50%, -50%) scale(0.2);
+                }
+                50% {
+                    transform: translate(-50%, -50%) scale(1.2);
+                }
+                100% {
+                    transform: translate(-50%, -50%) scale(1);
+                }
+            }
+            [name=username] {
+                @include input-logo(user);
+            }
+            [name=password] {
+                @include input-logo(password);
+            }
+            [name=email] {
+                @include input-logo(email);
+            }
+            [name=location] {
+                @include input-logo(location);
+                background-position: 11px;
+            }
+        }
+
+        .send {
+            &__textarea {
+                @include label-primary;
+                min-height: 160px;
+                display: block;
+            }
+        }
+
+        .sign {
+            padding: 0;
+            &__checkbox-wrapper {
+                width: 90%;
+                margin: auto;
+                display: flex;
+                justify-content: space-between;
+                align-items: baseline;
+            }
+            &__checkbox {
+                display: inline-block;
+            }
+            &__btn {
+                display: inline-block;
+                width: 190px;
+                margin-left: 20px;
+            }
+        }
+
+        .recover,
+        subscribe {
+            &__btn-wrapper {
+                width: 90%;
+                margin: auto;
+                display: flex;
+                justify-content: space-between;
+            }
+            &__btn {
+                width: 38%;
+            }
+        }
+
+        .red-btn {
+            background: #f14145;
+        }
+
+        .opacity-btn {
+            opacity: 0.5;
+        }

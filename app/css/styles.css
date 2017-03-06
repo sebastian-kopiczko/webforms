@@ -1,3 +1,286 @@
+* {
+  box-sizing: border-box; }
+
 body {
   width: 100%;
-  background: red; }
+  background-image: url("../img/main-bg.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover; }
+
+label,
+button {
+  cursor: pointer; }
+
+.wrapper {
+  width: 90%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  margin: auto; }
+
+.register,
+.send,
+.sign,
+.recover,
+.subscribe {
+  margin: 40px 10px 60px 10px;
+  width: 420px;
+  text-align: center; }
+  .register fieldset,
+  .send fieldset,
+  .sign fieldset,
+  .recover fieldset,
+  .subscribe fieldset {
+    background: #fffff3;
+    box-shadow: 0px 0px 1px 20px rgba(0, 0, 0, 0.5); }
+  .register h2,
+  .send h2,
+  .sign h2,
+  .recover h2,
+  .subscribe h2 {
+    font-size: 2rem;
+    color: #eee;
+    margin-bottom: 2rem;
+    text-shadow: 2px 2px rgba(0, 0, 0, 0.75); }
+  .register__input,
+  .send__input,
+  .sign__input,
+  .recover__input,
+  .subscribe__input {
+    position: relative;
+    width: 90%;
+    height: 40px;
+    border-radius: 3px;
+    border: 2px solid #ccc;
+    margin: 15px auto;
+    padding-left: 43px; }
+    .register__input[type=checkbox] + label,
+    .send__input[type=checkbox] + label,
+    .sign__input[type=checkbox] + label,
+    .recover__input[type=checkbox] + label,
+    .subscribe__input[type=checkbox] + label {
+      display: inline-block; }
+  .register__select,
+  .send__select,
+  .sign__select,
+  .recover__select,
+  .subscribe__select {
+    width: 90%;
+    height: 40px;
+    border-radius: 3px;
+    border: 2px solid #ccc;
+    margin: 15px auto;
+    padding-left: 43px;
+    width: 91%;
+    color: #999; }
+  .register__checkbox,
+  .send__checkbox,
+  .sign__checkbox,
+  .recover__checkbox,
+  .subscribe__checkbox {
+    width: 90%;
+    height: 40px;
+    border-radius: 3px;
+    border: 2px solid #ccc;
+    margin: 15px auto;
+    text-align: left;
+    margin: 0 auto;
+    height: 18px;
+    border: none; }
+    .register__checkbox-label,
+    .send__checkbox-label,
+    .sign__checkbox-label,
+    .recover__checkbox-label,
+    .subscribe__checkbox-label {
+      position: relative;
+      padding-left: 30px; }
+    .register__checkbox input,
+    .send__checkbox input,
+    .sign__checkbox input,
+    .recover__checkbox input,
+    .subscribe__checkbox input {
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 18px;
+      height: 18px;
+      opacity: 0;
+      z-index: 2;
+      cursor: pointer; }
+      .register__checkbox input:checked ~ .state:before,
+      .send__checkbox input:checked ~ .state:before,
+      .sign__checkbox input:checked ~ .state:before,
+      .recover__checkbox input:checked ~ .state:before,
+      .subscribe__checkbox input:checked ~ .state:before {
+        -webkit-animation: checkboxShowAnim .4s 1;
+                animation: checkboxShowAnim .4s 1;
+        opacity: 1; }
+    .register__checkbox .state,
+    .send__checkbox .state,
+    .sign__checkbox .state,
+    .recover__checkbox .state,
+    .subscribe__checkbox .state {
+      width: 18px;
+      height: 18px;
+      display: block;
+      position: absolute;
+      left: 0;
+      top: 0;
+      border: 1px solid #aaa;
+      border-radius: 3px;
+      cursor: pointer; }
+      .register__checkbox .state:before,
+      .send__checkbox .state:before,
+      .sign__checkbox .state:before,
+      .recover__checkbox .state:before,
+      .subscribe__checkbox .state:before {
+        width: 12px;
+        height: 12px;
+        border-radius: 3px;
+        background: #70B81B;
+        display: block;
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        content: '';
+        -webkit-transform: translate(-50%, -50%) scale(1);
+                transform: translate(-50%, -50%) scale(1);
+        opacity: 0; }
+  .register__btn,
+  .send__btn,
+  .sign__btn,
+  .recover__btn,
+  .subscribe__btn {
+    width: 90%;
+    height: 40px;
+    border-radius: 3px;
+    border: 2px solid #ccc;
+    margin: 15px auto;
+    margin: 10px 0 0 0;
+    color: #eee;
+    font-size: 1.4rem;
+    background: #70B81B;
+    border: none;
+    border-radius: 7px; }
+
+@-webkit-keyframes checkboxShowAnim {
+  0% {
+    border-radius: 50%;
+    -webkit-transform: translate(-50%, -50%) scale(0.2);
+            transform: translate(-50%, -50%) scale(0.2); }
+  50% {
+    -webkit-transform: translate(-50%, -50%) scale(1.2);
+            transform: translate(-50%, -50%) scale(1.2); }
+  100% {
+    -webkit-transform: translate(-50%, -50%) scale(1);
+            transform: translate(-50%, -50%) scale(1); } }
+
+@keyframes checkboxShowAnim {
+  0% {
+    border-radius: 50%;
+    -webkit-transform: translate(-50%, -50%) scale(0.2);
+            transform: translate(-50%, -50%) scale(0.2); }
+  50% {
+    -webkit-transform: translate(-50%, -50%) scale(1.2);
+            transform: translate(-50%, -50%) scale(1.2); }
+  100% {
+    -webkit-transform: translate(-50%, -50%) scale(1);
+            transform: translate(-50%, -50%) scale(1); } }
+  .register [name=username],
+  .send [name=username],
+  .sign [name=username],
+  .recover [name=username],
+  .subscribe [name=username] {
+    background-image: url("../img/user.png");
+    background-position: 9px;
+    background-repeat: no-repeat;
+    outline-left: 1px solid lime; }
+  .register [name=password],
+  .send [name=password],
+  .sign [name=password],
+  .recover [name=password],
+  .subscribe [name=password] {
+    background-image: url("../img/password.png");
+    background-position: 9px;
+    background-repeat: no-repeat;
+    outline-left: 1px solid lime; }
+  .register [name=email],
+  .send [name=email],
+  .sign [name=email],
+  .recover [name=email],
+  .subscribe [name=email] {
+    background-image: url("../img/email.png");
+    background-position: 9px;
+    background-repeat: no-repeat;
+    outline-left: 1px solid lime; }
+  .register [name=location],
+  .send [name=location],
+  .sign [name=location],
+  .recover [name=location],
+  .subscribe [name=location] {
+    background-image: url("../img/location.png");
+    background-position: 9px;
+    background-repeat: no-repeat;
+    outline-left: 1px solid lime;
+    background-position: 11px; }
+
+.send__textarea {
+  width: 90%;
+  height: 40px;
+  border-radius: 3px;
+  border: 2px solid #ccc;
+  margin: 15px auto;
+  min-height: 160px;
+  display: block; }
+
+.sign {
+  padding: 0; }
+  .sign__checkbox-wrapper {
+    width: 90%;
+    margin: auto;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    -webkit-box-align: baseline;
+        -ms-flex-align: baseline;
+            align-items: baseline; }
+  .sign__checkbox {
+    display: inline-block; }
+  .sign__btn {
+    display: inline-block;
+    width: 190px;
+    margin-left: 20px; }
+
+.recover__btn-wrapper,
+subscribe__btn-wrapper {
+  width: 90%;
+  margin: auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between; }
+
+.recover__btn,
+subscribe__btn {
+  width: 38%; }
+
+.red-btn {
+  background: #f14145; }
+
+.opacity-btn {
+  opacity: 0.5; }

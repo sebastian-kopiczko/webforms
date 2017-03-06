@@ -1,0 +1,20 @@
+@mixin label-primary {
+    width: 90%;
+    height: 40px;
+    border-radius: 3px;
+    border: 2px solid #ccc;
+    margin: 15px auto;
+}
+
+@mixin padding-left {
+    padding-left: 43px;
+}
+
+@mixin input-logo($logo-name) {
+    background: {
+        image: url('../img/' + $logo-name + '.png');
+        position: 9px;
+        repeat: no-repeat;
+    }
+    outline-left: 1px solid lime;
+}

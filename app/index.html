@@ -6,10 +6,86 @@
     <title>Webforms</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="author" href="https://www.linkedin.com/in/sebastian-kopiczko/">
+    <link rel="stylesheet" href="css/normalize.css">
     <link rel="stylesheet" href="css/styles.css">
     <link href="https://fonts.googleapis.com/css?family=Noto+Sans&subset=latin-ext" rel="stylesheet"> </head>
 
 <body>
+    <div class="wrapper">
+        <div class="forms-col">
+            <form action="/" class="register">
+                <h2>Register form</h2>
+                <fieldset>
+                    <input type="text" name="username" placeholder="Username" class="register__input username">
+                    <input type="text" name="password" placeholder="Password" class="register__input password">
+                    <input type="text" name="password" placeholder="Confirm password" class="register__input confirm-password">
+                    <input type="text" name="email" placeholder="E-mail" class="register__input email">
+                    <select name="location" placeholder="Your location" class="register__select location">
+                        <option value="" disabled selected style="display: none;">Your location</option>
+                        <option value="Warsaw">Warsaw</option>
+                        <option value="London">London</option>
+                        <option value="Rome">Rome</option>
+                        <option value="Paris">Paris</option>
+                    </select>
+                    <div class="register__checkbox">
+                        <label class="register__checkbox-label" for="register-checkbox">
+                            <input type="checkbox" name="register-checkbox" class="checkbox__btn" id="register-checkbox" /><i class="state"></i><span>I have read and accept terms of use.</span></label>
+                    </div>
+                    <button class="register__btn">Sign up</button>
+                </fieldset>
+            </form>
+            <form action="/" class="send">
+                <h2>Send email</h2>
+                <fieldset>
+                    <input type="text" name="username" placeholder="Username" class="register__input username">
+                    <input type="text" name="email" placeholder="E-mail" class="send__input email">
+                    <textarea name="message" id="" cols="40" rows="10" class="send__textarea" placeholder="Type your message..."></textarea>
+                    <div class="register__checkbox">
+                        <label class="send__checkbox-label" for="send-checkbox">
+                            <input type="checkbox" name="send-checkbox" class="checkbox__btn" id="send-checkbox" /><i class="state"></i><span>I have read and accept terms of use.</span></label>
+                    </div>
+                    <button class="send__btn">Send email</button>
+                </fieldset>
+            </form>
+        </div>
+        <div class="forms-col">
+            <form action="/" class="sign">
+                <h2>Sign up</h2>
+                <fieldset>
+                    <input type="text" name="username" placeholder="Username" class="sign__input username">
+                    <input type="text" name="password" placeholder="Password" class="sign__input password">
+                    <div class="sign__checkbox-wrapper">
+                        <div class="sign__checkbox">
+                            <label class="sign__checkbox-label" for="sign-checkbox">
+                                <input type="checkbox" name="sign-checkbox" class="checkbox__btn" id="sign-checkbox" /><i class="state"></i><span>Remember me.</span></label>
+                        </div>
+                        <button class="sign__btn">Send email</button>
+                    </div>
+                </fieldset>
+            </form>
+            <form action="/" class="recover">
+                <h2>Recover form</h2>
+                <fieldset>
+                    <input type="text" name="email" placeholder="Enter your email" class="recover__input username">
+                    <input type="text" name="password" placeholder="Password" class="recover__input password">
+                    <div class="recover__btn-wrapper">
+                        <button class="recover__btn">Send</button>
+                        <button class="recover__btn opacity-btn">Done</button>
+                    </div>
+                </fieldset>
+            </form>
+            <form action="/" class="subscribe">
+                <h2>Subscribe form</h2>
+                <fieldset>
+                    <input type="text" name="email" placeholder="Enter your email" class="subscribe__input username">
+                    <div class="recover__btn-wrapper">
+                        <button class="recover__btn">Subscribe</button>
+                        <button class="recover__btn red-btn">No, thanks</button>
+                    </div>
+                </fieldset>
+            </form>
+        </div>
+    </div>
     <script>
         //toggle class for checkboxes
     </script>
