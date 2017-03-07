@@ -138,6 +138,9 @@
             [name=email] {
                 @include input-logo(email);
             }
+            [name=phone] {
+                @include input-logo(phone);
+            }
             [name=location] {
                 @include input-logo(location);
                 background-position: 11px;

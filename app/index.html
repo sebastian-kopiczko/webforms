@@ -16,11 +16,11 @@
             <form action="/" class="register">
                 <h2>Register form</h2>
                 <fieldset>
-                    <input type="text" name="username" placeholder="Username" class="register__input username">
-                    <input type="text" name="password" placeholder="Password" class="register__input password">
-                    <input type="text" name="password" placeholder="Confirm password" class="register__input confirm-password">
-                    <input type="text" name="email" placeholder="E-mail" class="register__input email">
-                    <select name="location" placeholder="Your location" class="register__select location">
+                    <input type="text" required name="username" placeholder="Username" data-error="Enter your username" class="register__input username" pattern="[a-zA-ZąĄććęęłŁńŃóÓśŚżŻŹŹ ]+">
+                    <input type="password" required data-error="Your password is not valid" name="password" placeholder="Password" class="register__input password">
+                    <input type="password" required data-error="" data-error="Passwords are not the same" name="password" placeholder="Confirm password" class="register__input confirm-password">
+                    <input type="text" required data-error="Enter your email address" name="email" placeholder="E-mail" pattern="[^@\s]+@[^@\s]+\.[^@\s]+" class="register__input email">
+                    <select name="location" required data-error="Choose your location" placeholder="Your location" class="register__select location">
                         <option value="" disabled selected style="display: none;">Your location</option>
                         <option value="Warsaw">Warsaw</option>
                         <option value="London">London</option>
@@ -29,7 +29,7 @@
                     </select>
                     <div class="register__checkbox">
                         <label class="register__checkbox-label" for="register-checkbox">
-                            <input type="checkbox" name="register-checkbox" class="checkbox__btn" id="register-checkbox" /><i class="state"></i><span>I have read and accept terms of use.</span></label>
+                            <input type="checkbox" required data-error="You have to accept terms of use" name="register-checkbox" class="checkbox__btn" id="register-checkbox" /><i class="state"></i><span>I have read and accept terms of use.</span></label>
                     </div>
                     <button class="register__btn">Sign up</button>
                 </fieldset>
@@ -37,12 +37,12 @@
             <form action="/" class="send">
                 <h2>Send email</h2>
                 <fieldset>
-                    <input type="text" name="username" placeholder="Username" class="register__input username">
-                    <input type="text" name="email" placeholder="E-mail" class="send__input email">
-                    <textarea name="message" id="" cols="40" rows="10" class="send__textarea" placeholder="Type your message..."></textarea>
+                    <input type="text" name="username" required data-error="Enter your username" pattern="[a-zA-ZąĄććęęłŁńŃóÓśŚżŻŹŹ ]+" placeholder="Username" class="register__input username">
+                    <input type="text" name="email" required data-error="Enter your email address" pattern="[^@\s]+@[^@\s]+\.[^@\s]+" placeholder="E-mail" class="send__input email">
+                    <textarea name="message" id="" cols="40" rows="10" class="send__textarea" required data-error="Enter your message" pattern=".+" placeholder="Type your message..."></textarea>
                     <div class="register__checkbox">
                         <label class="send__checkbox-label" for="send-checkbox">
-                            <input type="checkbox" name="send-checkbox" class="checkbox__btn" id="send-checkbox" /><i class="state"></i><span>I have read and accept terms of use.</span></label>
+                            <input type="checkbox" required data-error="You have to accept terms of use" name="send-checkbox" class="checkbox__btn" id="send-checkbox" /><i class="state"></i><span>I have read and accept terms of use.</span></label>
                     </div>
                     <button class="send__btn">Send email</button>
                 </fieldset>
@@ -50,14 +50,14 @@
         </div>
         <div class="forms-col">
             <form action="/" class="sign">
-                <h2>Sign up</h2>
+                <h2>Sign in</h2>
                 <fieldset>
-                    <input type="text" name="username" placeholder="Username" class="sign__input username">
-                    <input type="text" name="password" placeholder="Password" class="sign__input password">
+                    <input type="text" required data-error="Enter your username" pattern="[a-zA-ZąĄććęęłŁńŃóÓśŚżŻŹŹ ]+" name="username" placeholder="Username" class="sign__input username">
+                    <input type="password" required data-error="" name="password" placeholder="Password" class="sign__input password">
                     <div class="sign__checkbox-wrapper">
                         <div class="sign__checkbox">
                             <label class="sign__checkbox-label" for="sign-checkbox">
-                                <input type="checkbox" name="sign-checkbox" class="checkbox__btn" id="sign-checkbox" /><i class="state"></i><span>Remember me.</span></label>
+                                <input type="checkbox" required data-error="You have to accept terms of use" name="sign-checkbox" class="checkbox__btn" id="sign-checkbox" /><i class="state"></i><span>Remember me.</span></label>
                         </div>
                         <button class="sign__btn">Send email</button>
                     </div>
@@ -66,8 +66,8 @@
             <form action="/" class="recover">
                 <h2>Recover form</h2>
                 <fieldset>
-                    <input type="text" name="email" placeholder="Enter your email" class="recover__input username">
-                    <input type="text" name="password" placeholder="Password" class="recover__input password">
+                    <input type="text" required data-error="Enter your email address" name="email" placeholder="Enter your email" pattern="[^@\s]+@[^@\s]+\.[^@\s]+" class="recover__input username">
+                    <input type="text" required data-error="Your phone number is not valid" name="phone" placeholder="Enter your phone number" class="recover__input password">
                     <div class="recover__btn-wrapper">
                         <button class="recover__btn">Send</button>
                         <button class="recover__btn opacity-btn">Done</button>
@@ -77,7 +77,7 @@
             <form action="/" class="subscribe">
                 <h2>Subscribe form</h2>
                 <fieldset>
-                    <input type="text" name="email" placeholder="Enter your email" class="subscribe__input username">
+                    <input type="text" required data-error="You have to enter your email address" name="email" placeholder="Enter your email" pattern="[^@\s]+@[^@\s]+\.[^@\s]+" class="subscribe__input username">
                     <div class="recover__btn-wrapper">
                         <button class="recover__btn">Subscribe</button>
                         <button class="recover__btn red-btn">No, thanks</button>

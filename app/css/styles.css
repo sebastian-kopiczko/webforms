@@ -223,6 +223,15 @@ button {
     background-position: 9px;
     background-repeat: no-repeat;
     outline-left: 1px solid lime; }
+  .register [name=phone],
+  .send [name=phone],
+  .sign [name=phone],
+  .recover [name=phone],
+  .subscribe [name=phone] {
+    background-image: url("../img/phone.png");
+    background-position: 9px;
+    background-repeat: no-repeat;
+    outline-left: 1px solid lime; }
   .register [name=location],
   .send [name=location],
   .sign [name=location],
